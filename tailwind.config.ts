@@ -14,50 +14,46 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          dark: "hsl(var(--border-dark))",
+        },
         background: {
           DEFAULT: "hsl(var(--background))",
-          secondary: "hsl(var(--background-secondary))",
+          dark: "hsl(var(--background-dark))",
         },
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          glow: "hsl(var(--primary-glow))",
-          dark: "hsl(var(--primary-dark))",
-          foreground: "hsl(var(--primary-foreground))",
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+          light: "hsl(var(--foreground-light))",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+        "electric-blue": {
+          DEFAULT: "hsl(var(--electric-blue))",
+          glow: "hsl(var(--electric-blue-glow))",
+          dark: "hsl(var(--electric-blue-dark))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
-          glow: "hsl(var(--accent-glow))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          dark: "hsl(var(--muted-dark))",
+          foreground: "hsl(var(--muted-foreground))",
         },
       },
       backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-card": "var(--gradient-card)",
+        "gradient-electric": "var(--gradient-electric)",
+        "gradient-dark": "var(--gradient-dark)",
+        "gradient-mesh": "var(--gradient-mesh)",
       },
       boxShadow: {
-        sm: "var(--shadow-sm)",
-        md: "var(--shadow-md)", 
-        lg: "var(--shadow-lg)",
+        electric: "var(--shadow-electric)",
+        brutal: "var(--shadow-brutal)", 
+        soft: "var(--shadow-soft)",
         glow: "var(--shadow-glow)",
       },
       borderRadius: {

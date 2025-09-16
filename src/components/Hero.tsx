@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown, Code, Sparkles } from "lucide-react";
 import profileImage from "@/assets/profile-hero.jpg";
+import FloatingElements from "./FloatingElements";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -9,65 +11,123 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+      <FloatingElements />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Profile Image */}
-          <div className="fade-in">
-            <div className="relative">
-              <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl border-4 border-primary-foreground/20">
-                <img 
-                  src={profileImage} 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                />
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Column - Text Content */}
+          <div className="grid-appear">
+            <div className="space-y-8">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full px-4 py-2">
+                <Sparkles size={16} className="text-electric-blue" />
+                <span className="text-sm font-medium text-electric-blue">Tech Founder & Investor</span>
               </div>
-              <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-lg opacity-30 animate-pulse"></div>
+
+              {/* Main Heading */}
+              <div className="space-y-4">
+                <h1 className="heading-display text-balance">
+                  <span className="text-foreground">Eng.</span>
+                  <br />
+                  <span className="text-electric glitch" data-text="Fund.">Fund.</span>
+                  <br />
+                  <span className="text-foreground">Invest.</span>
+                </h1>
+                
+                <p className="text-xl text-muted-foreground max-w-lg text-balance leading-relaxed">
+                  Transformando ideias disruptivas em soluções que impactam milhares de pessoas e investindo no futuro da tecnologia.
+                </p>
+              </div>
+
+              {/* Stats */}
+              <div className="flex gap-8">
+                <div>
+                  <div className="text-3xl font-bold text-electric-blue">
+                    <AnimatedCounter end={1} suffix="x" />
+                  </div>
+                  <div className="text-sm text-muted-foreground">Empresa Fundada</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-electric-blue">
+                    <AnimatedCounter end={2} suffix="x" />
+                  </div>
+                  <div className="text-sm text-muted-foreground">Investimentos</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-electric-blue">
+                    <AnimatedCounter end={5} suffix="+" />
+                  </div>
+                  <div className="text-sm text-muted-foreground">Anos de Experiência</div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button 
+                  className="btn-electric"
+                  onClick={() => scrollToSection('about')}
+                >
+                  <span>Minha História</span>
+                </button>
+                <button 
+                  className="btn-brutal"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  <span>Vamos Conversar</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Hero Content */}
-          <div className="text-center lg:text-left lg:flex-1 fade-in fade-in-delay-1">
-            <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-              Engenheiro
-              <span className="block gradient-text">Fundador</span>
-              <span className="block text-accent-foreground">Investidor</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-primary-foreground/80 mb-8 max-w-2xl">
-              Transformando ideias em soluções tecnológicas e investindo no futuro da inovação
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-in fade-in-delay-2">
-              <Button 
-                className="btn-hero text-lg"
-                onClick={() => scrollToSection('about')}
-              >
-                Conheça Minha História
-              </Button>
-              <Button 
-                variant="outline" 
-                className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 text-lg px-8 py-4"
-                onClick={() => scrollToSection('contact')}
-              >
-                Vamos Conversar
-              </Button>
+          {/* Right Column - Profile Section */}
+          <div className="grid-appear grid-appear-delay">
+            <div className="relative">
+              {/* Main Profile Card */}
+              <div className="bg-background border border-border rounded-3xl p-8 shadow-soft">
+                <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-mesh">
+                  <img 
+                    src={profileImage} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Engenheiro de Computação</h3>
+                    <p className="text-muted-foreground">Base técnica sólida em desenvolvimento</p>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-electric-blue">
+                    <Code size={16} />
+                    <span className="text-sm font-medium">Full-Stack • Cloud • AI</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Cards */}
+              <div className="absolute -top-4 -right-4 bg-electric-blue text-white rounded-2xl p-4 shadow-electric floating">
+                <div className="text-2xl font-bold">CEO</div>
+                <div className="text-sm opacity-90">Tech Company</div>
+              </div>
+
+              <div className="absolute -bottom-4 -left-4 bg-background-dark text-foreground-light rounded-2xl p-4 shadow-soft floating-delayed">
+                <div className="text-lg font-bold">Investor</div>
+                <div className="text-sm opacity-70">2 Startups</div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in fade-in-delay-3">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <button 
             onClick={() => scrollToSection('about')}
-            className="text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-bounce"
+            className="text-muted-foreground hover:text-electric-blue transition-colors magnetic"
           >
-            <ChevronDown size={32} />
+            <ArrowDown size={24} className="animate-bounce" />
           </button>
         </div>
       </div>
