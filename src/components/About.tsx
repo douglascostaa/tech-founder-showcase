@@ -12,23 +12,26 @@ const About = () => {
           {/* Left - Heading */}
           <div>
             <h2 className="heading-section text-foreground">
-              Engenheiro de
+              Engenheiro,
               <br />
-              <span className="text-electric-blue">computação</span>
+              <span className="text-electric-blue">empresário</span>
+              <br />
+              & investidor
             </h2>
           </div>
           
           {/* Right - Description */}
           <div className="space-y-8">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Com uma base técnica sólida em engenharia de computação, 
-              fundei uma empresa de tecnologia focada em criar experiências 
-              digitais inovadoras.
+              Com formação em engenharia de computação, construí minha carreira 
+              atuando no mercado internacional de desenvolvimento de software e 
+              e-commerce em países como Argentina, Chile, México, Peru e Brasil.
             </p>
             
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Além de liderar minha própria empresa, sou investidor em duas 
-              startups promissoras que estão redefinindo seus respectivos mercados.
+              Essa experiência global me deu a visão para fundar minha própria 
+              empresa de tecnologia e investir em startups que estão transformando 
+              seus mercados.
             </p>
 
             {/* Stats */}
