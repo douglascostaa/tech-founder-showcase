@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -15,23 +16,45 @@ const Hero = () => {
           
           {/* Hero Typography */}
           <div className="space-y-8">
-            <p className="text-label fade-up">Engenheiro · Fundador · Investidor</p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-label"
+            >
+              Engenheiro · Fundador · Investidor
+            </motion.p>
             
-            <h1 className="heading-hero fade-up fade-up-delay-1">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="heading-hero"
+            >
               <span className="text-foreground">Criando</span>
               <br />
               <span className="text-electric-blue">o futuro</span>
-            </h1>
+            </motion.h1>
             
-            <div className="max-w-md fade-up fade-up-delay-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="max-w-md"
+            >
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Fundador de empresa de tecnologia e investidor em startups que estão 
                 transformando o mercado.
               </p>
-            </div>
+            </motion.div>
 
             {/* CTA */}
-            <div className="flex items-center gap-8 fade-up fade-up-delay-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex items-center gap-8"
+            >
               <button 
                 className="btn-outline"
                 onClick={() => scrollToSection('about')}
@@ -44,13 +67,18 @@ const Hero = () => {
               >
                 Contato
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="px-6 md:px-12 lg:px-24 pb-8">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="px-6 md:px-12 lg:px-24 pb-8"
+      >
         <div className="flex items-end justify-between border-t border-border pt-8">
           <div className="flex items-center gap-12">
             <div>
@@ -58,8 +86,8 @@ const Hero = () => {
               <p className="text-foreground font-medium">Bah!Tech</p>
             </div>
             <div>
-              <p className="text-label mb-1">Investidor</p>
-              <p className="text-foreground font-medium">2 Startups</p>
+              <p className="text-label mb-1">Sócio</p>
+              <p className="text-foreground font-medium">Nexus Venture</p>
             </div>
           </div>
           
@@ -70,7 +98,7 @@ const Hero = () => {
             <ArrowDown size={20} className="animate-bounce" />
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Subtle Blue Glow */}
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-electric-blue/5 rounded-full blur-[150px] pointer-events-none" />
