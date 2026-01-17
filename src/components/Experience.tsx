@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const experiences = [
@@ -6,12 +7,12 @@ const Experience = () => {
       role: "Fundador & CEO",
       company: "Bah!Tech",
       period: "2019 — Presente",
-      description: "Empresa de tecnologia especializada em criar experiências digitais.",
+      description: "Empresa de tecnologia especializada em Inteligência Artificial, desenvolvimento de WebSites, Aplicativos e Sistemas sob medida.",
       link: "https://bahtech.com.br",
       highlight: true,
     },
     {
-      role: "Investidor",
+      role: "Sócio",
       company: "Nexus Venture",
       period: "2022 — Presente",
       description: "Empresa focada em investimentos imobiliários.",
@@ -29,13 +30,25 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         
         {/* Section Label */}
-        <p className="text-label mb-12">Experiência</p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-label mb-12"
+        >
+          Experiência
+        </motion.p>
         
         {/* Experience List */}
         <div className="space-y-0">
           {experiences.map((exp, index) => (
-            <div 
+            <motion.div 
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group border-t border-border py-12 hover:bg-accent/50 transition-all duration-300 -mx-6 px-6"
             >
               <div className="grid lg:grid-cols-12 gap-6 items-start">
@@ -76,7 +89,7 @@ const Experience = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

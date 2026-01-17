@@ -1,16 +1,36 @@
+import { motion } from "framer-motion";
+
 const About = () => {
+  const stats = [
+    { value: "2", label: "Empresas" },
+    { value: "6", label: "Anos de experiência" },
+  ];
+
   return (
-    <section id="about" className="section-padding bg-background">
+    <section id="about" className="section-padding bg-muted-dark">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Label */}
-        <p className="text-label mb-12">Sobre</p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-label mb-12"
+        >
+          Sobre
+        </motion.p>
         
-        {/* Main Content Grid */}
+        {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           
           {/* Left - Heading */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="heading-section text-foreground">
               Engenheiro,
               <br />
@@ -18,10 +38,16 @@ const About = () => {
               <br />
               & investidor
             </h2>
-          </div>
+          </motion.div>
           
           {/* Right - Description */}
-          <div className="space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
             <p className="text-xl text-muted-foreground leading-relaxed">
               Com formação em engenharia de computação, construí minha carreira 
               atuando no mercado internacional de desenvolvimento de software e 
@@ -35,21 +61,21 @@ const About = () => {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
-              <div>
-                <p className="text-4xl font-bold text-foreground">1</p>
-                <p className="text-label mt-2">Empresa</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-foreground">2</p>
-                <p className="text-label mt-2">Investimentos</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-foreground">5+</p>
-                <p className="text-label mt-2">Anos</p>
-              </div>
+            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-border">
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                >
+                  <p className="text-4xl font-bold text-foreground mb-2">{stat.value}</p>
+                  <p className="text-label">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
