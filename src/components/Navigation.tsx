@@ -40,9 +40,10 @@ const Navigation = () => {
             {/* Logo */}
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-foreground font-bold text-xl tracking-tight hover:text-electric-blue transition-colors"
+              className="group flex items-center gap-0.5 hover:opacity-80 transition-opacity"
             >
-              Portfolio
+              <span className="text-2xl font-black text-foreground tracking-tighter">D</span>
+              <span className="text-2xl font-black text-electric-blue tracking-tighter">C</span>
             </button>
 
             {/* Desktop Menu */}

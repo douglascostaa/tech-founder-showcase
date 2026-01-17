@@ -12,15 +12,15 @@ const Experience = () => {
     },
     {
       role: "Investidor",
-      company: "Startup 1",
+      company: "Nexus Venture",
       period: "2022 — Presente",
-      description: "Investimento em startup de tecnologia com foco em inovação.",
+      description: "Empresa focada em investimentos imobiliários.",
     },
     {
       role: "Investidor",
-      company: "Startup 2",
+      company: "Contel Telecom",
       period: "2023 — Presente",
-      description: "Investimento estratégico em empresa de tecnologia emergente.",
+      description: "Startup em telefonia móvel no Brasil com expansão nos EUA.",
     },
   ];
 
