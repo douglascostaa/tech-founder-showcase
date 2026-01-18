@@ -6,7 +6,7 @@ const Experience = () => {
     {
       role: "Fundador & CEO",
       company: "Bah!Tech",
-      period: "2019 — Presente",
+      period: "2021 — Presente",
       description: "Empresa de tecnologia especializada em Inteligência Artificial, desenvolvimento de WebSites, Aplicativos e Sistemas sob medida.",
       link: "https://bahtech.com.br",
       highlight: true,
@@ -14,13 +14,13 @@ const Experience = () => {
     {
       role: "Sócio",
       company: "Nexus Venture",
-      period: "2022 — Presente",
+      period: "2025 — Presente",
       description: "Empresa focada em investimentos imobiliários.",
     },
     {
       role: "Investidor",
-      company: "Contel Telecom",
-      period: "2023 — Presente",
+      company: "Contel",
+      period: "2024 — Presente",
       description: "Startup em telefonia móvel no Brasil com expansão nos EUA.",
     },
   ];

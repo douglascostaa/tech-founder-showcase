@@ -29,21 +29,49 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-background/90 backdrop-blur-md border-b border-border' 
-          : 'bg-transparent'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-background/90 backdrop-blur-md border-b border-border'
+        : 'bg-transparent'
+        }`}>
         <div className="px-6 md:px-12 lg:px-24">
           <div className="flex items-center justify-between h-20">
-            
+
             {/* Logo */}
-            <button 
+            <button
               onClick={() => scrollToSection('hero')}
-              className="group flex items-center gap-0.5 hover:opacity-80 transition-opacity"
+              className="group flex items-center justify-center hover:opacity-80 transition-opacity"
+              aria-label="Home"
             >
-              <span className="text-2xl font-black text-foreground tracking-tighter">D</span>
-              <span className="text-2xl font-black text-electric-blue tracking-tighter">C</span>
+              <svg width="45" height="35" viewBox="0 0 45 35" fill="none" xmlns="http://www.w3.org/2000/svg" className="overflow-visible">
+                {/* D Layer Behind */}
+                <text
+                  x="0"
+                  y="30"
+                  fontSize="36"
+                  fontWeight="900"
+                  fill="currentColor"
+                  className="text-foreground tracking-tighter"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  D
+                </text>
+
+                {/* C Layer Front with Cutout Effect */}
+                <text
+                  x="18"
+                  y="30"
+                  fontSize="36"
+                  fontWeight="900"
+                  fill="hsl(var(--electric-blue))"
+                  stroke="hsl(var(--background))"
+                  strokeWidth="5"
+                  paintOrder="stroke"
+                  className="tracking-tighter"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  C
+                </text>
+              </svg>
             </button>
 
             {/* Desktop Menu */}
