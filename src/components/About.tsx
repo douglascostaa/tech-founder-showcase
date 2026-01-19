@@ -55,9 +55,7 @@ const About = () => {
             </p>
 
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Essa experiência global me deu a visão para fundar minha própria
-              empresa de tecnologia e investir em startups que estão transformando
-              seus mercados.
+              Hoje, como fundador, meu foco está na interseção entre tecnologia e negócios: lidero times para criar produtos escaláveis, otimizo operações comerciais e aplico Inteligência Artificial para gerar valor real e vantagem competitiva.
             </p>
 
             {/* Stats */}
