@@ -9,11 +9,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section id="contact" className="pt-32 pb-8 px-6 md:px-12 lg:px-24 bg-background">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Section Label */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -22,10 +22,10 @@ const Contact = () => {
         >
           Contato
         </motion.p>
-        
+
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          
+
           {/* Left - CTA */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -38,13 +38,13 @@ const Contact = () => {
               <br />
               <span className="text-electric-blue">conversar?</span>
             </h2>
-            
+
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Interessado em parcerias, investimentos ou apenas trocar 
+              Interessado em parcerias, investimentos ou apenas trocar
               uma ideia sobre tecnologia? Entre em contato.
             </p>
 
-            <motion.a 
+            <motion.a
               href="mailto:douglas.costa@bahtech.com.br"
               className="btn-blue inline-flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
@@ -54,9 +54,9 @@ const Contact = () => {
               <ArrowUpRight size={16} />
             </motion.a>
           </motion.div>
-          
+
           {/* Right - Links */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -79,9 +79,9 @@ const Contact = () => {
                   <span className="text-lg text-foreground group-hover:text-electric-blue transition-colors">
                     {link.label}
                   </span>
-                  <ArrowUpRight 
-                    size={20} 
-                    className="text-muted-foreground group-hover:text-electric-blue transition-colors" 
+                  <ArrowUpRight
+                    size={20}
+                    className="text-muted-foreground group-hover:text-electric-blue transition-colors"
                   />
                 </motion.a>
               ))}
@@ -90,7 +90,7 @@ const Contact = () => {
         </div>
 
         {/* Footer */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

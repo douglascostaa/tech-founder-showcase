@@ -10,8 +10,28 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-between relative overflow-hidden bg-background">
 
+      {/* Background Hero Image */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <div className="absolute right-0 top-0 w-full md:w-[60%] lg:w-[50%] h-full">
+          <img
+            src="/hero-profile.png"
+            alt="Douglas Costa"
+            className="w-full h-full object-cover object-[20%] md:object-top"
+          />
+
+          {/* Dark overlay for discrete look */}
+          <div className="absolute inset-0 bg-black/80 md:bg-black/40" />
+
+          {/* Gradient Fade - Bottom (darker from middle down) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
+
+          {/* Gradient Fade - Left (to blend with content) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+        </div>
+      </div>
+
       {/* Main Content */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center relative z-10">
         <div className="w-full px-6 md:px-12 lg:px-24">
 
           {/* Hero Typography */}
@@ -77,7 +97,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="px-6 md:px-12 lg:px-24 pb-8"
+        className="px-6 md:px-12 lg:px-24 pb-8 relative z-10"
       >
         <div className="flex items-end justify-between border-t border-border pt-8">
           <div className="flex items-center gap-12">
