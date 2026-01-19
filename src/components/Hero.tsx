@@ -9,23 +9,23 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-between relative overflow-hidden bg-background">
-      
+
       {/* Main Content */}
       <div className="flex-1 flex items-center">
         <div className="w-full px-6 md:px-12 lg:px-24">
-          
+
           {/* Hero Typography */}
           <div className="space-y-8">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-label"
             >
-              Engenheiro · Fundador · Investidor
+              Empresário · Engenheiro · Investidor
             </motion.p>
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -35,33 +35,33 @@ const Hero = () => {
               <br />
               <span className="text-electric-blue">o futuro</span>
             </motion.h1>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-md"
             >
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Fundador de empresa de tecnologia e investidor em startups que estão 
+                Fundador de empresa de tecnologia e investidor em startups que estão
                 transformando o mercado.
               </p>
             </motion.div>
 
             {/* CTA */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex items-center gap-8"
             >
-              <button 
+              <button
                 className="btn-outline"
                 onClick={() => scrollToSection('about')}
               >
                 Conhecer
               </button>
-              <button 
+              <button
                 className="btn-text hover-line"
                 onClick={() => scrollToSection('contact')}
               >
@@ -73,7 +73,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Bar */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
@@ -90,8 +90,8 @@ const Hero = () => {
               <p className="text-foreground font-medium">Nexus Venture</p>
             </div>
           </div>
-          
-          <button 
+
+          <button
             onClick={() => scrollToSection('about')}
             className="text-muted-foreground hover:text-electric-blue transition-colors"
           >
