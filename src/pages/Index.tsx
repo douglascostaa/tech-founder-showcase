@@ -3,6 +3,7 @@ import MouseSpotlight from "@/components/MouseSpotlight";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
         </div>
         <About />
         <Experience />
+        <Gallery />
         <Contact />
       </main>
     </div>
