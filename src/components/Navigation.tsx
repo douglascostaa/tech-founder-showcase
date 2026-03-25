@@ -23,7 +23,7 @@ const Navigation = () => {
   const menuItems = [
     { label: 'Início', id: 'hero' },
     { label: 'Sobre', id: 'about' },
-    { label: 'Experiência', id: 'experience' },
+    { label: 'Negócios', id: 'experience' },
     { label: 'Contato', id: 'contact' },
   ];
 

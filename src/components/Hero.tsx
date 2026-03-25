@@ -63,8 +63,7 @@ const Hero = () => {
               className="max-w-md"
             >
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Fundador de empresa de tecnologia e investidor em startups que estão
-                transformando o mercado.
+                Engenheiro de computação, fundador de startup e sócio de empresa de investimentos imobiliários.
               </p>
             </motion.div>
 
