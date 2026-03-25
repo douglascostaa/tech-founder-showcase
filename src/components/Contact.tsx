@@ -101,7 +101,15 @@ const Contact = () => {
             © 2025. Todos os direitos reservados.
           </p>
           <p className="text-muted-foreground text-sm">
-            Feito com tecnologia <span className="text-electric-blue font-medium">Bah!</span>
+            Feito com tecnologia{" "}
+            <a
+              href="https://bahtech.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-electric-blue font-medium hover:underline transition-all duration-200"
+            >
+              Bah!
+            </a>
           </p>
         </motion.div>
       </div>

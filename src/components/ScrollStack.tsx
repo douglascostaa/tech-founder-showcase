@@ -215,28 +215,26 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
     const setupLenis = useCallback(() => {
         if (useWindowScroll) {
-            const lenis = new Lenis({
-                duration: 1.2,
-                easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smoothWheel: true,
-                touchMultiplier: 2,
-                infinite: false,
-                wheelMultiplier: 1,
-                lerp: 0.1,
-                syncTouch: true,
-                syncTouchLerp: 0.075
-            });
-
-            lenis.on('scroll', handleScroll);
-
-            const raf = (time: number) => {
-                lenis.raf(time);
-                animationFrameRef.current = requestAnimationFrame(raf);
+            // When using window scroll, do NOT use Lenis — it fights the native
+            // page scroll and causes the cards to shake. Listen to the native
+            // scroll event and throttle updates via rAF instead.
+            let rafScheduled = false;
+            const onNativeScroll = () => {
+                if (!rafScheduled) {
+                    rafScheduled = true;
+                    animationFrameRef.current = requestAnimationFrame(() => {
+                        rafScheduled = false;
+                        updateCardTransforms();
+                    });
+                }
             };
-            animationFrameRef.current = requestAnimationFrame(raf);
-
-            lenisRef.current = lenis;
-            return lenis;
+            window.addEventListener('scroll', onNativeScroll, { passive: true });
+            // Store cleanup fn in lenisRef as a sentinel object with a destroy method
+            lenisRef.current = {
+                destroy: () => window.removeEventListener('scroll', onNativeScroll),
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } as any;
+            return lenisRef.current;
         } else {
             const scroller = scrollerRef.current;
             if (!scroller) return;
@@ -284,13 +282,9 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             if (i < cards.length - 1) {
                 card.style.marginBottom = `${itemDistance}px`;
             }
-            card.style.willChange = 'transform, filter';
+            card.style.willChange = 'transform';
             card.style.transformOrigin = 'top center';
             card.style.backfaceVisibility = 'hidden';
-            card.style.transform = 'translateZ(0)';
-            card.style.webkitTransform = 'translateZ(0)';
-            card.style.perspective = '1000px';
-            card.style.webkitPerspective = '1000px';
         });
 
         setupLenis();
